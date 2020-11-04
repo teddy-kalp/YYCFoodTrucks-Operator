@@ -63,8 +63,14 @@ struct LoginView: View {
                         .cornerRadius(15.0)
                     }
                 }
-                .offset(y:-50)
-            }
+                //.offset(y:-50)
+                .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .topLeading)
+                .background(
+                  LinearGradient(gradient: Gradient(colors: [primColor, .gray]), startPoint: .top, endPoint: .bottom)
+                    .edgesIgnoringSafeArea(.all))
+        }
+        
+            
             
     }
     
