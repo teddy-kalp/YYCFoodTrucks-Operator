@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct LoginView: View {
+    @ObservedObject var OperatorRepo = OperatorRepository()
+    
     var body: some View {
         VStack{
             Text("Hello Operator!")
