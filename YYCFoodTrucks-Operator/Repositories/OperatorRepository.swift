@@ -21,7 +21,7 @@ class OperatorRepository: ObservableObject{
     }
     
     func loadData(){
-        db.collection("Users").addSnapshotListener{(querySnapshot, error) in
+        db.collection("Operators").addSnapshotListener{(querySnapshot, error) in
             guard let documents = querySnapshot?.documents else{
                 print("No Users Found")
                 return

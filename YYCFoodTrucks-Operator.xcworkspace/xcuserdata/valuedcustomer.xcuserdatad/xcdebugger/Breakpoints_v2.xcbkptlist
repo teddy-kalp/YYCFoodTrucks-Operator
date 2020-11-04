@@ -8,7 +8,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "8902C8D2-4D00-41C9-A25E-752A0422308A"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YYCFoodTrucks-Operator/Repositories/OperatorRepository.swift"
@@ -33,6 +33,22 @@
             startingLineNumber = "38"
             endingLineNumber = "38"
             landmarkName = "loadData()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5B8D322C-F219-453C-96DC-CDE1D3376AF6"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "YYCFoodTrucks-Operator/Main Screens/LoginView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "74"
+            endingLineNumber = "74"
+            landmarkName = "authenticateUser(id:password:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

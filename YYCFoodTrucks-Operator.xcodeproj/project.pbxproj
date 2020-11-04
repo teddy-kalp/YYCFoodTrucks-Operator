@@ -10,7 +10,7 @@
 		11F0EE054887B80B97044528 /* Pods_YYCFoodTrucks_Operator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A054A5692A0C4C4AAD010BC5 /* Pods_YYCFoodTrucks_Operator.framework */; };
 		794BF92425531F6400B015C8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794BF92325531F6400B015C8 /* AppDelegate.swift */; };
 		794BF92625531F6400B015C8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794BF92525531F6400B015C8 /* SceneDelegate.swift */; };
-		794BF92825531F6400B015C8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794BF92725531F6400B015C8 /* ContentView.swift */; };
+		794BF92825531F6400B015C8 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794BF92725531F6400B015C8 /* LoginView.swift */; };
 		794BF92A25531F6600B015C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 794BF92925531F6600B015C8 /* Assets.xcassets */; };
 		794BF92D25531F6600B015C8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 794BF92C25531F6600B015C8 /* Preview Assets.xcassets */; };
 		794BF93025531F6600B015C8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 794BF92E25531F6600B015C8 /* LaunchScreen.storyboard */; };
@@ -32,7 +32,7 @@
 		794BF92025531F6400B015C8 /* YYCFoodTrucks-Operator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "YYCFoodTrucks-Operator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		794BF92325531F6400B015C8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		794BF92525531F6400B015C8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		794BF92725531F6400B015C8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		794BF92725531F6400B015C8 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		794BF92925531F6600B015C8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		794BF92C25531F6600B015C8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		794BF92F25531F6600B015C8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -128,7 +128,7 @@
 		794BF9572553220400B015C8 /* Main Screens */ = {
 			isa = PBXGroup;
 			children = (
-				794BF92725531F6400B015C8 /* ContentView.swift */,
+				794BF92725531F6400B015C8 /* LoginView.swift */,
 			);
 			path = "Main Screens";
 			sourceTree = "<group>";
@@ -302,7 +302,7 @@
 				794BF98C255327A600B015C8 /* FoodCategory.swift in Sources */,
 				794BF92625531F6400B015C8 /* SceneDelegate.swift in Sources */,
 				794BF9892553278200B015C8 /* FoodCategoryRepository.swift in Sources */,
-				794BF92825531F6400B015C8 /* ContentView.swift in Sources */,
+				794BF92825531F6400B015C8 /* LoginView.swift in Sources */,
 				794BF980255326F200B015C8 /* Truck.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
