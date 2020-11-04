@@ -4,6 +4,9 @@ bin-release/
 [Oo]bj/
 [Bb]in/
 
+# Ignore Mac system files
+*.DS_Store
+*.xcuserdatad
 # Other files and folders
 .settings/
 
