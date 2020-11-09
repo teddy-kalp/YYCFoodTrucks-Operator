@@ -22,20 +22,19 @@ struct LoginView: View {
         let screenWidth = screenSize.width
         let screenHeight = screenSize.height
         NavigationView{
-                VStack(spacing: 15) {
-                    Text("YYC Food Trucks")
-                      .font(.largeTitle).foregroundColor(Color.black)
-                      .padding([.bottom], 40)
+            VStack(spacing: 15) {
                     
                     Image("yycfood")
                       .resizable()
                       .frame(width: 200, height: 200)
-                      .clipShape(Circle())
-                      .overlay(Circle().stroke(Color.white, lineWidth: 4))
                       .shadow(radius: 10)
                       .padding(.bottom, 50)
-                    
-                    TextField("Operator Id", text: self.$userId)
+                
+                    Text("Operator Login")
+                      .font(.largeTitle).foregroundColor(Color.black)
+                      .padding([.bottom], 40)
+                
+                    TextField("Email", text: self.$userId)
                        .padding()
                        .cornerRadius(20.0)
                         .colorScheme(.light)
@@ -44,7 +43,8 @@ struct LoginView: View {
                         .padding()
                         .cornerRadius(20.0)
                         .colorScheme(.light)
-                    
+                        .padding(.bottom, 50)
+                
                     Button(action: {
                         let user = authenticateUser(id: Int(self.userId) ?? -1, password: self.password)
                         if (user != nil){
