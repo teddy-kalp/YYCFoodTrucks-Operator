@@ -8,6 +8,21 @@
 
 /* Begin PBXBuildFile section */
 		11F0EE054887B80B97044528 /* Pods_YYCFoodTrucks_Operator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A054A5692A0C4C4AAD010BC5 /* Pods_YYCFoodTrucks_Operator.framework */; };
+		188064A62558DCCD003374A8 /* TruckList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188064A52558DCCD003374A8 /* TruckList.swift */; };
+		188064AB2558DD8A003374A8 /* SessionStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188064AA2558DD8A003374A8 /* SessionStore.swift */; };
+		188064AF2558DE34003374A8 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188064AE2558DE34003374A8 /* User.swift */; };
+		188064B32558E14D003374A8 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188064B22558E14D003374A8 /* SignInView.swift */; };
+		188064B725592805003374A8 /* Schedules.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188064B625592805003374A8 /* Schedules.swift */; };
+		188064BA25592811003374A8 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188064B925592811003374A8 /* UserProfile.swift */; };
+		188064BD2559292B003374A8 /* NavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188064BC2559292B003374A8 /* NavBar.swift */; };
+		188064C1255930B5003374A8 /* TruckProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188064BF255930B5003374A8 /* TruckProfile.swift */; };
+		188064F4255933E8003374A8 /* FirebaseImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188064F3255933E8003374A8 /* FirebaseImage.swift */; };
+		18806510255935B2003374A8 /* global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1880650F255935B2003374A8 /* global.swift */; };
+		1880651425593665003374A8 /* FirebaseImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1880651325593665003374A8 /* FirebaseImageLoader.swift */; };
+		1880651B25593C7A003374A8 /* NewTruck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1880651A25593C7A003374A8 /* NewTruck.swift */; };
+		1880651E2559C49F003374A8 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1880651D2559C49F003374A8 /* ImagePicker.swift */; };
+		188065212559C5E2003374A8 /* ImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188065202559C5E2003374A8 /* ImagePickerView.swift */; };
+		188065242559E8F0003374A8 /* NewSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188065232559E8F0003374A8 /* NewSchedule.swift */; };
 		794BF92425531F6400B015C8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794BF92325531F6400B015C8 /* AppDelegate.swift */; };
 		794BF92625531F6400B015C8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794BF92525531F6400B015C8 /* SceneDelegate.swift */; };
 		794BF92825531F6400B015C8 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794BF92725531F6400B015C8 /* LoginView.swift */; };
@@ -29,6 +44,21 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		188064A52558DCCD003374A8 /* TruckList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TruckList.swift; sourceTree = "<group>"; };
+		188064AA2558DD8A003374A8 /* SessionStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionStore.swift; sourceTree = "<group>"; };
+		188064AE2558DE34003374A8 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		188064B22558E14D003374A8 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
+		188064B625592805003374A8 /* Schedules.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Schedules.swift; sourceTree = "<group>"; };
+		188064B925592811003374A8 /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
+		188064BC2559292B003374A8 /* NavBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavBar.swift; sourceTree = "<group>"; };
+		188064BF255930B5003374A8 /* TruckProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TruckProfile.swift; sourceTree = "<group>"; };
+		188064F3255933E8003374A8 /* FirebaseImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseImage.swift; sourceTree = "<group>"; };
+		1880650F255935B2003374A8 /* global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = global.swift; sourceTree = "<group>"; };
+		1880651325593665003374A8 /* FirebaseImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseImageLoader.swift; sourceTree = "<group>"; };
+		1880651A25593C7A003374A8 /* NewTruck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTruck.swift; sourceTree = "<group>"; };
+		1880651D2559C49F003374A8 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		188065202559C5E2003374A8 /* ImagePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerView.swift; sourceTree = "<group>"; };
+		188065232559E8F0003374A8 /* NewSchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewSchedule.swift; sourceTree = "<group>"; };
 		794BF92025531F6400B015C8 /* YYCFoodTrucks-Operator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "YYCFoodTrucks-Operator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		794BF92325531F6400B015C8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		794BF92525531F6400B015C8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -66,6 +96,36 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		188064A92558DD67003374A8 /* Session */ = {
+			isa = PBXGroup;
+			children = (
+				188064AA2558DD8A003374A8 /* SessionStore.swift */,
+			);
+			path = Session;
+			sourceTree = "<group>";
+		};
+		188064B12558E12C003374A8 /* SupportingViews */ = {
+			isa = PBXGroup;
+			children = (
+				188064BF255930B5003374A8 /* TruckProfile.swift */,
+				188064BC2559292B003374A8 /* NavBar.swift */,
+				188064B22558E14D003374A8 /* SignInView.swift */,
+				188064F3255933E8003374A8 /* FirebaseImage.swift */,
+				1880651A25593C7A003374A8 /* NewTruck.swift */,
+				188065202559C5E2003374A8 /* ImagePickerView.swift */,
+				188065232559E8F0003374A8 /* NewSchedule.swift */,
+			);
+			path = SupportingViews;
+			sourceTree = "<group>";
+		};
+		1880650E255935A1003374A8 /* GLOBALS */ = {
+			isa = PBXGroup;
+			children = (
+				1880650F255935B2003374A8 /* global.swift */,
+			);
+			path = GLOBALS;
+			sourceTree = "<group>";
+		};
 		794BF91725531F6400B015C8 = {
 			isa = PBXGroup;
 			children = (
@@ -87,6 +147,9 @@
 		794BF92225531F6400B015C8 /* YYCFoodTrucks-Operator */ = {
 			isa = PBXGroup;
 			children = (
+				1880650E255935A1003374A8 /* GLOBALS */,
+				188064B12558E12C003374A8 /* SupportingViews */,
+				188064A92558DD67003374A8 /* Session */,
 				794BF9742553262600B015C8 /* Repositories */,
 				794BF9732553261E00B015C8 /* Models */,
 				794BF9542553219E00B015C8 /* Delegates */,
@@ -129,6 +192,9 @@
 			isa = PBXGroup;
 			children = (
 				794BF92725531F6400B015C8 /* LoginView.swift */,
+				188064A52558DCCD003374A8 /* TruckList.swift */,
+				188064B625592805003374A8 /* Schedules.swift */,
+				188064B925592811003374A8 /* UserProfile.swift */,
 			);
 			path = "Main Screens";
 			sourceTree = "<group>";
@@ -142,6 +208,9 @@
 				794BF98B255327A600B015C8 /* FoodCategory.swift */,
 				794BF98E2553284300B015C8 /* ImageLoader.swift */,
 				794BF9912553299700B015C8 /* Operator.swift */,
+				188064AE2558DE34003374A8 /* User.swift */,
+				1880651325593665003374A8 /* FirebaseImageLoader.swift */,
+				1880651D2559C49F003374A8 /* ImagePicker.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -290,6 +359,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				188065242559E8F0003374A8 /* NewSchedule.swift in Sources */,
+				18806510255935B2003374A8 /* global.swift in Sources */,
+				188064B32558E14D003374A8 /* SignInView.swift in Sources */,
+				188064F4255933E8003374A8 /* FirebaseImage.swift in Sources */,
+				1880651E2559C49F003374A8 /* ImagePicker.swift in Sources */,
+				188065212559C5E2003374A8 /* ImagePickerView.swift in Sources */,
+				188064C1255930B5003374A8 /* TruckProfile.swift in Sources */,
+				1880651B25593C7A003374A8 /* NewTruck.swift in Sources */,
+				188064B725592805003374A8 /* Schedules.swift in Sources */,
 				794BF9832553273000B015C8 /* ScheduleRepository.swift in Sources */,
 				794BF92425531F6400B015C8 /* AppDelegate.swift in Sources */,
 				794BF9922553299700B015C8 /* Operator.swift in Sources */,
@@ -297,12 +375,18 @@
 				794BF97D255326DA00B015C8 /* TruckRepository.swift in Sources */,
 				794BF99525532AB300B015C8 /* OperatorRepository.swift in Sources */,
 				794BF9862553275800B015C8 /* Schedule.swift in Sources */,
+				188064AF2558DE34003374A8 /* User.swift in Sources */,
+				188064A62558DCCD003374A8 /* TruckList.swift in Sources */,
+				188064BD2559292B003374A8 /* NavBar.swift in Sources */,
 				794BF97A2553267000B015C8 /* LandMark.swift in Sources */,
+				188064BA25592811003374A8 /* UserProfile.swift in Sources */,
 				794BF9762553265800B015C8 /* LandMarkRepository.swift in Sources */,
 				794BF98C255327A600B015C8 /* FoodCategory.swift in Sources */,
 				794BF92625531F6400B015C8 /* SceneDelegate.swift in Sources */,
 				794BF9892553278200B015C8 /* FoodCategoryRepository.swift in Sources */,
 				794BF92825531F6400B015C8 /* LoginView.swift in Sources */,
+				1880651425593665003374A8 /* FirebaseImageLoader.swift in Sources */,
+				188064AB2558DD8A003374A8 /* SessionStore.swift in Sources */,
 				794BF980255326F200B015C8 /* Truck.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

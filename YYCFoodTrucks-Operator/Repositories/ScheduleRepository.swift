@@ -14,7 +14,7 @@ class ScheduleRespository: ObservableObject{
     @Published var schedules = [Schedule]()
     
     init() {
-        removeOldSchedules()
+        //removeOldSchedules()
         loadData()
     }
     
@@ -24,9 +24,11 @@ class ScheduleRespository: ObservableObject{
                 print("No Documents")
                 return
             }
-            self.schedules = documents.map{(queryDocumentSnapshot) -> Schedule in
+            let sched = documents.filter{$0["openDate"] != nil && $0["closeDate"] != nil}
+            self.schedules = sched.map{(queryDocumentSnapshot) -> Schedule in
                 let data = queryDocumentSnapshot.data()
                 
+                print("Got schedule", data)
                 
                 let openTimestamp = data["openDate"] as? Timestamp ?? nil
                 let openDate = openTimestamp!.dateValue()
@@ -34,7 +36,6 @@ class ScheduleRespository: ObservableObject{
                 let closeDate = closeTimestamp!.dateValue()
                 let locationId = data["locationId"] as? Int ?? -1
                 let truckId = data["truckId"] as? Int ?? -1
-                
                 return Schedule(locationId: locationId, truckId: truckId, openDate: openDate, closeDate: closeDate)
             }
         }

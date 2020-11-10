@@ -11,4 +11,5 @@ target 'YYCFoodTrucks-Operator' do
   pod 'Firebase/Firestore'
   pod 'FirebaseFirestoreSwift'
   pod 'Firebase/Storage'
+  pod 'ActivityIndicatorView'
 end

@@ -7,46 +7,41 @@
 
 import Foundation
 import SwiftUI
+import Firebase
 import FirebaseFirestore
 import FirebaseFirestoreSwift
 
 class OperatorRepository: ObservableObject{
     @Published var operators = [Operator]()
+    @Published var operator_trucks = [Truck]()
     // will be used to find the trucks for the operator
     @ObservedObject var TruckRepo = TruckRespository()
     private let db = Firestore.firestore()
+    @EnvironmentObject var session: SessionStore
+    var user = Auth.auth().currentUser
     
     init(){
         loadData()
     }
     
     func loadData(){
-        db.collection("Operators").addSnapshotListener{(querySnapshot, error) in
-            guard let documents = querySnapshot?.documents else{
-                print("No Users Found")
-                return
-            }
-            self.operators = documents.map{(queryDocumentSnapshot) -> Operator in
-                let data = queryDocumentSnapshot.data()
-                let id = data["OperatorId"] as? Int ?? -1
-                let password = data["password"] as? String ?? "XXXXX"
-                let truckIds = data["truckIds"] as? [Int] ?? [Int]()
-                
-                var trucks = [Truck]()
-                
-                for truckId in truckIds{
-                    for truck in self.TruckRepo.trucks{
-                        if (truckId == truck.id){
-                            trucks.append(truck)
-                            break
+        if(user != nil){
+            db.collection("Operators").document(user!.uid).addSnapshotListener{(querySnapshot, error) in
+                if(querySnapshot?.exists != nil){
+                    print("Got operator information", querySnapshot!.data())
+                    let name = querySnapshot!.get("name") as! String ?? "-"
+                    let truckIds = querySnapshot!.get("truck_ids") as! [Int] ?? [Int]()
+                    self.operators.removeAll()
+                    for truckId in truckIds{
+                        for truck in self.TruckRepo.trucks{
+                            if (truckId == truck.id){
+                                self.operator_trucks.append(truck)
+                                break
+                            }
                         }
                     }
                 }
-                
-                return Operator(id: id, password: password, trucks: trucks)
             }
         }
     }
-    
-    
 }
