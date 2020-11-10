@@ -20,6 +20,9 @@
 		18806510255935B2003374A8 /* global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1880650F255935B2003374A8 /* global.swift */; };
 		1880651425593665003374A8 /* FirebaseImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1880651325593665003374A8 /* FirebaseImageLoader.swift */; };
 		1880651B25593C7A003374A8 /* NewTruck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1880651A25593C7A003374A8 /* NewTruck.swift */; };
+		1880651E2559C49F003374A8 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1880651D2559C49F003374A8 /* ImagePicker.swift */; };
+		188065212559C5E2003374A8 /* ImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188065202559C5E2003374A8 /* ImagePickerView.swift */; };
+		188065242559E8F0003374A8 /* NewSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188065232559E8F0003374A8 /* NewSchedule.swift */; };
 		794BF92425531F6400B015C8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794BF92325531F6400B015C8 /* AppDelegate.swift */; };
 		794BF92625531F6400B015C8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794BF92525531F6400B015C8 /* SceneDelegate.swift */; };
 		794BF92825531F6400B015C8 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794BF92725531F6400B015C8 /* LoginView.swift */; };
@@ -53,6 +56,9 @@
 		1880650F255935B2003374A8 /* global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = global.swift; sourceTree = "<group>"; };
 		1880651325593665003374A8 /* FirebaseImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseImageLoader.swift; sourceTree = "<group>"; };
 		1880651A25593C7A003374A8 /* NewTruck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTruck.swift; sourceTree = "<group>"; };
+		1880651D2559C49F003374A8 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		188065202559C5E2003374A8 /* ImagePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerView.swift; sourceTree = "<group>"; };
+		188065232559E8F0003374A8 /* NewSchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewSchedule.swift; sourceTree = "<group>"; };
 		794BF92025531F6400B015C8 /* YYCFoodTrucks-Operator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "YYCFoodTrucks-Operator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		794BF92325531F6400B015C8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		794BF92525531F6400B015C8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -106,6 +112,8 @@
 				188064B22558E14D003374A8 /* SignInView.swift */,
 				188064F3255933E8003374A8 /* FirebaseImage.swift */,
 				1880651A25593C7A003374A8 /* NewTruck.swift */,
+				188065202559C5E2003374A8 /* ImagePickerView.swift */,
+				188065232559E8F0003374A8 /* NewSchedule.swift */,
 			);
 			path = SupportingViews;
 			sourceTree = "<group>";
@@ -202,6 +210,7 @@
 				794BF9912553299700B015C8 /* Operator.swift */,
 				188064AE2558DE34003374A8 /* User.swift */,
 				1880651325593665003374A8 /* FirebaseImageLoader.swift */,
+				1880651D2559C49F003374A8 /* ImagePicker.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -350,9 +359,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				188065242559E8F0003374A8 /* NewSchedule.swift in Sources */,
 				18806510255935B2003374A8 /* global.swift in Sources */,
 				188064B32558E14D003374A8 /* SignInView.swift in Sources */,
 				188064F4255933E8003374A8 /* FirebaseImage.swift in Sources */,
+				1880651E2559C49F003374A8 /* ImagePicker.swift in Sources */,
+				188065212559C5E2003374A8 /* ImagePickerView.swift in Sources */,
 				188064C1255930B5003374A8 /* TruckProfile.swift in Sources */,
 				1880651B25593C7A003374A8 /* NewTruck.swift in Sources */,
 				188064B725592805003374A8 /* Schedules.swift in Sources */,

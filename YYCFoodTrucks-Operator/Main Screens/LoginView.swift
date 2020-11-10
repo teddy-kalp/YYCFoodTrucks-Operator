@@ -24,9 +24,9 @@ struct LoginView: View {
             if(session.session != nil){
                 switch(session.cur_page){
                 case nav.Trucks:
-                    TruckList(locations: LocationRepo.landmarks, schedules: ScheduleRepo.schedules, trucks: TruckRepo.trucks)
+                    TruckList(locations: LocationRepo.landmarks, schedules: ScheduleRepo.schedules, trucks: OperatorRepo.operator_trucks)
                 case nav.Schedule:
-                    Schedules()
+                    Schedules(schedules: ScheduleRepo.schedules, trucks: OperatorRepo.operator_trucks)
                 case nav.Profile:
                     UserProfile()
                 }
@@ -41,15 +41,6 @@ struct LoginView: View {
         .onAppear(perform: {session.listen()})
             
             
-    }
-    
-    func authenticateUser(id: Int, password: String) -> Operator?{
-        for op in OperatorRepo.operators{
-            if (op.id == id && op.password == password){
-                return op
-            }
-        }
-        return nil
     }
     
 }

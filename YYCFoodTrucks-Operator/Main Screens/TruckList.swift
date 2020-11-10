@@ -36,9 +36,11 @@ struct TruckList: View {
                                 .frame(width: 200, height: 200, alignment: .center)
                             }
                         }
-                        .frame(width: 400, height: 200)
-                        .border(/*@START_MENU_TOKEN@*/Color.black/*@END_MENU_TOKEN@*/, width: /*@START_MENU_TOKEN@*/1/*@END_MENU_TOKEN@*/)
-                        
+                        .frame(width: 400, height: 150)
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 3)
+                                .stroke(Color.gray, lineWidth: 1)
+                        )
                     }
                 }
                 .navigationBarTitle("My Trucks")
@@ -46,6 +48,7 @@ struct TruckList: View {
                     Group{
                     NavigationLink(destination: NewTruck()){
                         Text("Add Truck")
+                            .foregroundColor(primColor)
                     }
                     }
                 )
