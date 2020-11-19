@@ -12,8 +12,6 @@ struct LoginView: View {
     @ObservedObject var ScheduleRepo = ScheduleRespository()
     @ObservedObject var TruckRepo = TruckRespository()
     
-    
-    
     @EnvironmentObject var session: SessionStore
     
     @State private var userId = ""

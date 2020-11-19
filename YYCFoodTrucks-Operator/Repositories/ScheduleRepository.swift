@@ -25,6 +25,7 @@ class ScheduleRespository: ObservableObject{
                 return
             }
             let sched = documents.filter{$0["openDate"] != nil && $0["closeDate"] != nil}
+            
             self.schedules = sched.map{(queryDocumentSnapshot) -> Schedule in
                 let data = queryDocumentSnapshot.data()
                 

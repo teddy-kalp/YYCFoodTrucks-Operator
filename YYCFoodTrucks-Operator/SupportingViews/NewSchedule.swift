@@ -12,6 +12,8 @@ struct NewSchedule: View {
     @State var end = Date()
     @State var address = ""
     @State var truck: Truck
+    @State var recurring = false
+    @State var repeat_option = ""
     
     var body: some View {
         HStack(){
@@ -34,9 +36,28 @@ struct NewSchedule: View {
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                         .frame(width: 300)
                 }
+                HStack{
+                    Toggle(isOn: $recurring){
+                        Text("Recurring")
+                    }
+                }
+                if recurring {
+                    VStack{
+                        Divider()
+                        Picker("Repeats",selection: $repeat_option){
+                            Text("Weekly")
+                            Text("Daily")
+                            Text("Weekdays")
+                            Text("Other")
+                        }.pickerStyle(DefaultPickerStyle())
+                    }
+                    
+                    
+                }
                 Spacer()
             }
         }.padding()
+        
     }
 }
 /*
