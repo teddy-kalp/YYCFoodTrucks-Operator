@@ -61,9 +61,10 @@ struct TruckList: View {
         print("Navigate from here to add truck page")
     }
 }
-/*
-struct TruckList_Previews: PreviewProvider {
-    static var previews: some View {
-        TruckList()
-    }
-}*/
+
+//struct TruckList_Previews: PreviewProvider {
+//    static var previews: some View {
+//        TruckList()
+//    }
+//}
+
