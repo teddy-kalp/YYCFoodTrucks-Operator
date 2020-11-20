@@ -10,7 +10,7 @@ import FirebaseFirestore
 import FirebaseFirestoreSwift
 import CoreLocation
 
-class LandMarkRespository: ObservableObject{
+class LocationRepository: ObservableObject{
     private let db = Firestore.firestore()
     @Published var landmarks = [LandMark]()
     
