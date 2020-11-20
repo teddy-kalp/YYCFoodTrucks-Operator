@@ -30,20 +30,32 @@ class OperatorRepository: ObservableObject{
             db.collection("Operators").document(user!.uid).addSnapshotListener{(querySnapshot, error) in
                 if(querySnapshot?.exists != nil){
                     print("Got operator information", querySnapshot!.data())
-                    let name = querySnapshot!.get("name") as! String ?? "null"
-                    let truckIds = querySnapshot!.get("truck_ids") as! [String] ?? [""]
+                    print("Got operator information (name)", querySnapshot!.get("name"))
+                    print("Got operator information (truck_ids)", querySnapshot!.get("truck_ids"))
                     self.operators.removeAll()
+                    self.operator_trucks.removeAll()
                     
-                    for truckId in truckIds{
-                        for truck in self.TruckRepo.trucks{
-                            print(truckId)
-                            print(truck.id)
-                            if (truckId == truck.id){
-                                self.operator_trucks.append(truck)
-                                break
+                    let name = querySnapshot!.get("name") as! String ?? "null"
+                    
+                    if let truck_Ids = querySnapshot!.get("truck_ids") as? [String]{
+                        for truckId in truck_Ids{
+                            for truck in self.TruckRepo.trucks{
+                                print(truckId)
+                                print(truck.id)
+                                if (truckId == truck.id){
+                                    self.operator_trucks.append(truck)
+                                    break
+                                }
                             }
                         }
+                        //truckIds = querySnapshot!.get("truck_ids") as! [String] ?? [""]
+                        print("String array..")
+                    } else {
+                        print("Not a string array?")
                     }
+                    
+                    
+ 
                 }
             }
         }
