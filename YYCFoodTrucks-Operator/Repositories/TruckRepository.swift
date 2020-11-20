@@ -27,12 +27,13 @@ class TruckRespository: ObservableObject{
                 let data = queryDocumentSnapshot.data()
                 
                 let name = data["name"] as? String ?? ""
-                let id = data["id"] as? Int ?? -1
+//                let id = data["id"] as? Int ?? -1
+                let id = queryDocumentSnapshot.documentID; // This gets the firebase id of the truck
                 let logo = data["logo"] as? String ?? ""
                 let category_id = data["categoryId"] as? Int ?? -1
                 let menu = data["menu"] as? String ?? ""
                 let description = data["description"] as? String ?? ""
-                
+
                 return Truck(name: name, id: id, logo: logo, category_id: category_id, menu: menu, description: description)
             }
         }
