@@ -42,7 +42,12 @@ class TruckRespository: ObservableObject{
     }
     
     public func addTruck(truck: Truck, truck_id: String){
-        
+        do{
+            let _ = try self.db.collection("Trucks").document(truck_id).setData(from: truck)
+        }
+        catch{
+            fatalError("Unable to encode task: \(error.localizedDescription)")
+        }
     }
 }
     
