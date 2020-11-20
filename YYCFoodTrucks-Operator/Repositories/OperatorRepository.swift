@@ -35,7 +35,9 @@ class OperatorRepository: ObservableObject{
                     self.operators.removeAll()
                     self.operator_trucks.removeAll()
                     
-                    let name = querySnapshot!.get("name") as! String ?? "null"
+                    if (querySnapshot!.get("name") as? String ?? "null") != nil{
+                        print("got name")
+                    }
                     
                     if let truck_Ids = querySnapshot!.get("truck_ids") as? [String]{
                         for truckId in truck_Ids{
@@ -59,5 +61,9 @@ class OperatorRepository: ObservableObject{
                 }
             }
         }
+    }
+    
+    public func addTruck(truck_id: String){
+        
     }
 }

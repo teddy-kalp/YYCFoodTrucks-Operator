@@ -17,7 +17,7 @@ class TruckRespository: ObservableObject{
         self.loadData()
     }
     
-    func loadData(){
+    public func loadData(){
         db.collection("TruckList").order(by: "name").addSnapshotListener{(querySnapshot, error) in
             guard let documents = querySnapshot?.documents else{
                 print("No Documents")
@@ -34,9 +34,15 @@ class TruckRespository: ObservableObject{
                 let menu = data["menu"] as? String ?? ""
                 let description = data["description"] as? String ?? ""
 
-                return Truck(name: name, id: id, logo: logo, category_id: category_id, menu: menu, description: description)
+                let truck = Truck(name: name, logo: logo, category_id: category_id, menu: menu, description: description)
+                truck.id = id
+                return truck
             }
         }
+    }
+    
+    public func addTruck(truck: Truck, truck_id: String){
+        
     }
 }
     

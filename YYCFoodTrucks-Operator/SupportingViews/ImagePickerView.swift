@@ -9,8 +9,7 @@ import SwiftUI
 
 struct ImagePickerView: View {
     @State var showImagePicker: Bool = false
-    @State var image: UIImage?
-
+    @Binding var image: UIImage?
     var width: CGFloat
     var height: CGFloat
     var message: String
@@ -22,8 +21,8 @@ struct ImagePickerView: View {
                 }){
                     if image != nil {
                         Image(uiImage: image!)
-                            .resizable()
-                         .frame(width: self.width, height: self.height)
+                        .resizable()
+                        .frame(width: self.width, height: self.height)
                     } else {
                         VStack{
                             Text(self.message)
