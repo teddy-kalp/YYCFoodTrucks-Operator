@@ -121,10 +121,48 @@ struct NewTruck: View {
 }
 
 struct addTruck: View{
+    @State var text = "Choose From List of Trucks"
+    
+    @ObservedObject var truckRepo = TruckRespository()
+    @ObservedObject var operatorRepo = OperatorRepository()
+    @State var selectedTruck = fillerTruck
+    @State var selected = false
     
     var body: some View{
-        Text("Choose From Existing Trucks")
-        // dropdown menu of all existing trucks
+        ScrollView{
+            Text("Choose Truck")
+                .font(.title)
+            ForEach(truckRepo.trucks){truck in
+                Button(action: {
+                    selectedTruck = truck
+                    selected = true
+                }){
+                    HStack{
+                        FirebaseImage(id:(truck.logo), width: Int(UIScreen.main.bounds.width/4), height: 175/2)
+                        Text(truck.name)
+                            .font(.system(size: 24))
+                            .foregroundColor(.black)
+                        if (selectedTruck.id == truck.id){
+                            Image(systemName: "checkmark.circle")
+                                .foregroundColor(primColor)
+                        }
+                    }
+                    .frame(width: UIScreen.main.bounds.width, height: 200)
+                    .padding(.bottom, -10)
+                    .border(primColor, width: 1)
+                }
+            }
+            if (selected){
+                Button(action: {
+                    operatorRepo.addTruck(truck_id: selectedTruck.id!)
+                }){
+                    Text("Add Truck")
+                        .font(.title)
+                        .border(primColor, width: 1)
+                        .shadow(radius: 5)
+                }
+            }
+        }
     }
 }
 

@@ -52,14 +52,16 @@ struct TruckList: View {
                                 .foregroundColor(primColor)
                             }
                         if (menuToggle){
-                            NavigationLink(destination: NewTruck()){
-                                Text("New Truck")
-                                Image(systemName: "plus.circle")
-                            }
-                            NavigationLink(destination: addTruck()){
-                                Text("Existing Truck")
-                                Image(systemName: "car.2.fill")
-                                
+                            HStack{
+                                NavigationLink(destination: NewTruck()){
+                                    Text("New Truck")
+                                    Image(systemName: "plus.circle")
+                                }
+                                NavigationLink(destination: addTruck()){
+                                    Text("Existing Truck")
+                                    Image(systemName: "car.2.fill")
+                                    
+                                }
                             }
                         }
                     }
