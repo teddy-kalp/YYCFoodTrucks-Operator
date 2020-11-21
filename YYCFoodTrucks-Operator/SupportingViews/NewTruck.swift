@@ -28,23 +28,17 @@ struct NewTruck: View {
         let menuPicker = ImagePickerView(image: self.$menuImage, width: 250, height: 250, message: "Upload Menu Image")
         ScrollView{
             VStack(spacing: 20){
-                
+                Text("Add a Truck")
+                    .font(.title)
                 bannerPicker
-                
                 truckPicker
-                
                 TextField("Truck Name", text: $truckName)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .frame(width: 300)
-                
-                
-                
                 TextField("Description", text: $description)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .frame(width: 300)
-                
                 menuPicker
-                
                 Button(action: addTruckToRepo){
                     Text("SUBMIT")
                         .font(.headline)
@@ -83,27 +77,45 @@ struct NewTruck: View {
             print("Menu Image is empty")
             return
         }
+        else if (truckName == ""){
+            error = true
+            print("Name is empty")
+            return
+        }
+        else if (description == ""){
+            error = true
+            print("Description is empty")
+            return
+        }
+        else{
+            error = false
+            print("All Fields Filled")
+        }
+        
         // updating the url where we want to upload the image data
-        let bannerUrl = "TruckBanners/\(truckName)Banner.png"
-        let truckUrl = "TruckLogos/\(truckName)Logo.png"
-        let menuUrl = "Menus/\(truckName)Menu.png"
+        let bannerUrl = "TruckBanners/\(truckName)Banner.jpeg"
+        let truckUrl = "TruckLogos/\(truckName)Logo.jpeg"
+        let menuUrl = "Menus/\(truckName)Menu.jpeg"
+        
         // uploading the images to firebase
+        // need to figure this out a little better
         let storage = Storage.storage()
         var ref = storage.reference().child(bannerUrl)
-        ref.putData((bannerImage?.pngData())!)
+        ref.putData((bannerImage?.jpegData(compressionQuality: 0.3))!)
         
         ref = storage.reference().child(truckUrl)
-        ref.putData((truckImage?.pngData())!)
+        ref.putData((truckImage?.jpegData(compressionQuality: 0.3))!)
         
         ref = storage.reference().child(menuUrl)
-        ref.putData((menuImage?.pngData())!)
+        ref.putData((menuImage?.jpegData(compressionQuality: 0.3))!)
         
         let addedTruck = Truck(name: truckName, logo: truckUrl, category_id: category, menu: menuUrl, description: description)
         
         // need to build this function
         let truck_id = randomString(length: 20)
+        
         truckRepo.addTruck(truck: addedTruck, truck_id: truck_id)
-        // need to build this function
+        //need to build this function
         operatorRepo.addTruck(truck_id: truck_id)
     }
 }

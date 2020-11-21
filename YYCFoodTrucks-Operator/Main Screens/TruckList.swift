@@ -53,11 +53,11 @@ struct TruckList: View {
                             }
                         if (menuToggle){
                             NavigationLink(destination: NewTruck()){
-                                Text("Existing Truck")
+                                Text("New Truck")
                                 Image(systemName: "plus.circle")
                             }
                             NavigationLink(destination: addTruck()){
-                                Text("New Truck")
+                                Text("Existing Truck")
                                 Image(systemName: "car.2.fill")
                                 
                             }
