@@ -15,7 +15,7 @@ class Truck: Identifiable, Codable {
     var id: String?
     var open = false
     var logo: String
-    var category_id: Int //Foreign key of category.id
+    var categoryId: Int //Foreign key of category.id
     
     var menu: String
     var description: String
@@ -23,7 +23,7 @@ class Truck: Identifiable, Codable {
     init(name: String, logo: String, category_id: Int, menu: String, description: String) {
         self.name = name
         self.logo = logo
-        self.category_id = category_id
+        self.categoryId = category_id
         self.menu = menu
         self.description = description
     }
