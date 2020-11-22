@@ -8,7 +8,7 @@
 import SwiftUI
 struct LoginView: View {
     @ObservedObject var OperatorRepo = OperatorRepository()
-    @ObservedObject var LocationRepo = LandMarkRespository()
+    @ObservedObject var LocationRepo = LocationRepository()
     @ObservedObject var ScheduleRepo = ScheduleRespository()
     @ObservedObject var TruckRepo = TruckRespository()
     

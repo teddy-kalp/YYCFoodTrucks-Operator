@@ -8,17 +8,16 @@
 import Foundation
 
 
-class LandMark: Identifiable, Codable {
+class Location: Identifiable, Codable {
     var address: String
     var latitude: Double
     var longitude: Double
-    var locationId: Int
+    var locationId: String?
     
-    init(address: String, latitude: Double, longitude: Double, locationId: Int) {
+    init(address: String, latitude: Double, longitude: Double) {
         self.address = address
         self.latitude = latitude
         self.longitude = longitude
-        self.locationId = locationId;
     }
 }
 
@@ -41,12 +40,6 @@ class LandMark: Identifiable, Codable {
 //    return (lat, lon)
 //}
 
-
-let testLocations = [
-    LandMark(address: "2500 University Avenue, Calgary, AB T2N1N4", latitude: 51.076340, longitude:-114.131520, locationId: 0),
-    LandMark(address: "819 4 Avenue NW, Calgary, AB", latitude: 51.057700, longitude: -114.082170, locationId: 1),
-    LandMark(address: "1527 23 Street NW, Calgary, AB T2N2P6", latitude: 51.066000, longitude: -114.116850, locationId: 2)
-]
 
 
 
