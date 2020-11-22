@@ -12,6 +12,7 @@ import FirebaseStorage
 struct NewTruck: View {
     @ObservedObject var truckRepo = TruckRespository()
     @ObservedObject var operatorRepo = OperatorRepository()
+    @Environment(\.presentationMode) var presentation
     @State var truckName: String = ""
     @State var description: String = ""
     @State var error: Bool = false
@@ -61,7 +62,7 @@ struct NewTruck: View {
     
     
     func addTruckToRepo(){
-        // checking to make sure the images are not null
+        // checking to make sure the images and text fields are not empty
         if (bannerImage == nil){
             error = true
             print("Banner Image is empty")
@@ -117,12 +118,14 @@ struct NewTruck: View {
         truckRepo.addTruck(truck: addedTruck, truck_id: truck_id)
         //need to build this function
         operatorRepo.addTruck(truck_id: truck_id)
+        
+        self.presentation.wrappedValue.dismiss()
     }
 }
 
 struct addTruck: View{
     @State var text = "Choose From List of Trucks"
-    
+    @Environment(\.presentationMode) var presentation
     @ObservedObject var truckRepo = TruckRespository()
     @ObservedObject var operatorRepo = OperatorRepository()
     @State var selectedTruck = fillerTruck
@@ -152,14 +155,17 @@ struct addTruck: View{
                     .border(primColor, width: 1)
                 }
             }
-            if (selected){
+        }
+        if (selected){
+            VStack{
                 Button(action: {
                     operatorRepo.addTruck(truck_id: selectedTruck.id!)
+                    self.presentation.wrappedValue.dismiss()
                 }){
                     Text("Add Truck")
                         .font(.title)
                         .border(primColor, width: 1)
-                        .shadow(radius: 5)
+                        .foregroundColor(primColor)
                 }
             }
         }
