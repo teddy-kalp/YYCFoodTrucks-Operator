@@ -11,13 +11,15 @@ import FirebaseAuth
 
 struct PasswordReset: View {
     
-    //var auth = Firebase.auth();
     
-
+    @ObservedObject var OperatorRepo = OperatorRepository()
     @EnvironmentObject var session: SessionStore
     @Environment(\.colorScheme) var colorScheme
     @State var user_email: String = ""
     @State var errorText: String = ""
+    @State var validOperator: Bool = true
+    @State private var showAlert = false
+    
     
     var body: some View {
         NavigationView(){
@@ -40,6 +42,7 @@ struct PasswordReset: View {
                         return
                     }
                 }))
+                    user_email = " ";
                     
                 }) {
                     Text("RESET")
