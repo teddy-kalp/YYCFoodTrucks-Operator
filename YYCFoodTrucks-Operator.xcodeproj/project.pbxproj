@@ -41,6 +41,7 @@
 		794BF98F2553284300B015C8 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794BF98E2553284300B015C8 /* ImageLoader.swift */; };
 		794BF9922553299700B015C8 /* Operator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794BF9912553299700B015C8 /* Operator.swift */; };
 		794BF99525532AB300B015C8 /* OperatorRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794BF99425532AB300B015C8 /* OperatorRepository.swift */; };
+		84090919256AF06700773B85 /* PasswordReset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84090918256AF06700773B85 /* PasswordReset.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -79,6 +80,7 @@
 		794BF98E2553284300B015C8 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 		794BF9912553299700B015C8 /* Operator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Operator.swift; sourceTree = "<group>"; };
 		794BF99425532AB300B015C8 /* OperatorRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperatorRepository.swift; sourceTree = "<group>"; };
+		84090918256AF06700773B85 /* PasswordReset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordReset.swift; sourceTree = "<group>"; };
 		91C3E82DD6162C48562C492B /* Pods-YYCFoodTrucks-Operator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YYCFoodTrucks-Operator.debug.xcconfig"; path = "Target Support Files/Pods-YYCFoodTrucks-Operator/Pods-YYCFoodTrucks-Operator.debug.xcconfig"; sourceTree = "<group>"; };
 		A054A5692A0C4C4AAD010BC5 /* Pods_YYCFoodTrucks_Operator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YYCFoodTrucks_Operator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBB64FFAB344469E8624FFE9 /* Pods-YYCFoodTrucks-Operator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YYCFoodTrucks-Operator.release.xcconfig"; path = "Target Support Files/Pods-YYCFoodTrucks-Operator/Pods-YYCFoodTrucks-Operator.release.xcconfig"; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 				1880651A25593C7A003374A8 /* NewTruck.swift */,
 				188065202559C5E2003374A8 /* ImagePickerView.swift */,
 				188065232559E8F0003374A8 /* NewSchedule.swift */,
+				84090918256AF06700773B85 /* PasswordReset.swift */,
 			);
 			path = SupportingViews;
 			sourceTree = "<group>";
@@ -385,6 +388,7 @@
 				794BF92625531F6400B015C8 /* SceneDelegate.swift in Sources */,
 				794BF9892553278200B015C8 /* FoodCategoryRepository.swift in Sources */,
 				794BF92825531F6400B015C8 /* LoginView.swift in Sources */,
+				84090919256AF06700773B85 /* PasswordReset.swift in Sources */,
 				1880651425593665003374A8 /* FirebaseImageLoader.swift in Sources */,
 				188064AB2558DD8A003374A8 /* SessionStore.swift in Sources */,
 				794BF980255326F200B015C8 /* Truck.swift in Sources */,
