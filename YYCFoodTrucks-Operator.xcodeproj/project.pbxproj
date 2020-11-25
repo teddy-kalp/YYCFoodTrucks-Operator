@@ -30,8 +30,8 @@
 		794BF92D25531F6600B015C8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 794BF92C25531F6600B015C8 /* Preview Assets.xcassets */; };
 		794BF93025531F6600B015C8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 794BF92E25531F6600B015C8 /* LaunchScreen.storyboard */; };
 		794BF93A2553209400B015C8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 794BF9392553209400B015C8 /* GoogleService-Info.plist */; };
-		794BF9762553265800B015C8 /* LandMarkRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794BF9752553265800B015C8 /* LandMarkRepository.swift */; };
-		794BF97A2553267000B015C8 /* LandMark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794BF9792553267000B015C8 /* LandMark.swift */; };
+		794BF9762553265800B015C8 /* LocationRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794BF9752553265800B015C8 /* LocationRepository.swift */; };
+		794BF97A2553267000B015C8 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794BF9792553267000B015C8 /* Location.swift */; };
 		794BF97D255326DA00B015C8 /* TruckRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794BF97C255326DA00B015C8 /* TruckRepository.swift */; };
 		794BF980255326F200B015C8 /* Truck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794BF97F255326F200B015C8 /* Truck.swift */; };
 		794BF9832553273000B015C8 /* ScheduleRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794BF9822553273000B015C8 /* ScheduleRepository.swift */; };
@@ -41,6 +41,7 @@
 		794BF98F2553284300B015C8 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794BF98E2553284300B015C8 /* ImageLoader.swift */; };
 		794BF9922553299700B015C8 /* Operator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794BF9912553299700B015C8 /* Operator.swift */; };
 		794BF99525532AB300B015C8 /* OperatorRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794BF99425532AB300B015C8 /* OperatorRepository.swift */; };
+		84090919256AF06700773B85 /* PasswordReset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84090918256AF06700773B85 /* PasswordReset.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,8 +69,8 @@
 		794BF92F25531F6600B015C8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		794BF93125531F6600B015C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		794BF9392553209400B015C8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		794BF9752553265800B015C8 /* LandMarkRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandMarkRepository.swift; sourceTree = "<group>"; };
-		794BF9792553267000B015C8 /* LandMark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandMark.swift; sourceTree = "<group>"; };
+		794BF9752553265800B015C8 /* LocationRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationRepository.swift; sourceTree = "<group>"; };
+		794BF9792553267000B015C8 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		794BF97C255326DA00B015C8 /* TruckRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TruckRepository.swift; sourceTree = "<group>"; };
 		794BF97F255326F200B015C8 /* Truck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Truck.swift; sourceTree = "<group>"; };
 		794BF9822553273000B015C8 /* ScheduleRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleRepository.swift; sourceTree = "<group>"; };
@@ -79,6 +80,7 @@
 		794BF98E2553284300B015C8 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 		794BF9912553299700B015C8 /* Operator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Operator.swift; sourceTree = "<group>"; };
 		794BF99425532AB300B015C8 /* OperatorRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperatorRepository.swift; sourceTree = "<group>"; };
+		84090918256AF06700773B85 /* PasswordReset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordReset.swift; sourceTree = "<group>"; };
 		91C3E82DD6162C48562C492B /* Pods-YYCFoodTrucks-Operator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YYCFoodTrucks-Operator.debug.xcconfig"; path = "Target Support Files/Pods-YYCFoodTrucks-Operator/Pods-YYCFoodTrucks-Operator.debug.xcconfig"; sourceTree = "<group>"; };
 		A054A5692A0C4C4AAD010BC5 /* Pods_YYCFoodTrucks_Operator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YYCFoodTrucks_Operator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBB64FFAB344469E8624FFE9 /* Pods-YYCFoodTrucks-Operator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YYCFoodTrucks-Operator.release.xcconfig"; path = "Target Support Files/Pods-YYCFoodTrucks-Operator/Pods-YYCFoodTrucks-Operator.release.xcconfig"; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 				1880651A25593C7A003374A8 /* NewTruck.swift */,
 				188065202559C5E2003374A8 /* ImagePickerView.swift */,
 				188065232559E8F0003374A8 /* NewSchedule.swift */,
+				84090918256AF06700773B85 /* PasswordReset.swift */,
 			);
 			path = SupportingViews;
 			sourceTree = "<group>";
@@ -202,7 +205,7 @@
 		794BF9732553261E00B015C8 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				794BF9792553267000B015C8 /* LandMark.swift */,
+				794BF9792553267000B015C8 /* Location.swift */,
 				794BF97F255326F200B015C8 /* Truck.swift */,
 				794BF9852553275800B015C8 /* Schedule.swift */,
 				794BF98B255327A600B015C8 /* FoodCategory.swift */,
@@ -218,7 +221,7 @@
 		794BF9742553262600B015C8 /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
-				794BF9752553265800B015C8 /* LandMarkRepository.swift */,
+				794BF9752553265800B015C8 /* LocationRepository.swift */,
 				794BF97C255326DA00B015C8 /* TruckRepository.swift */,
 				794BF9822553273000B015C8 /* ScheduleRepository.swift */,
 				794BF9882553278200B015C8 /* FoodCategoryRepository.swift */,
@@ -378,13 +381,14 @@
 				188064AF2558DE34003374A8 /* User.swift in Sources */,
 				188064A62558DCCD003374A8 /* TruckList.swift in Sources */,
 				188064BD2559292B003374A8 /* NavBar.swift in Sources */,
-				794BF97A2553267000B015C8 /* LandMark.swift in Sources */,
+				794BF97A2553267000B015C8 /* Location.swift in Sources */,
 				188064BA25592811003374A8 /* UserProfile.swift in Sources */,
-				794BF9762553265800B015C8 /* LandMarkRepository.swift in Sources */,
+				794BF9762553265800B015C8 /* LocationRepository.swift in Sources */,
 				794BF98C255327A600B015C8 /* FoodCategory.swift in Sources */,
 				794BF92625531F6400B015C8 /* SceneDelegate.swift in Sources */,
 				794BF9892553278200B015C8 /* FoodCategoryRepository.swift in Sources */,
 				794BF92825531F6400B015C8 /* LoginView.swift in Sources */,
+				84090919256AF06700773B85 /* PasswordReset.swift in Sources */,
 				1880651425593665003374A8 /* FirebaseImageLoader.swift in Sources */,
 				188064AB2558DD8A003374A8 /* SessionStore.swift in Sources */,
 				794BF980255326F200B015C8 /* Truck.swift in Sources */,

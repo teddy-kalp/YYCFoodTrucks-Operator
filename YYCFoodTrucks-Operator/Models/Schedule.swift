@@ -8,12 +8,12 @@
 import Foundation
 class Schedule: Identifiable, Codable {
     
-    var locationId: Int
+    var locationId: String
     var truckId: String
     var openDate: Date
     var closeDate: Date
     
-    init(locationId: Int, truckId: String, openDate: Date, closeDate: Date){
+    init(locationId: String, truckId: String, openDate: Date, closeDate: Date){
         self.locationId = locationId
         self.truckId = truckId
         self.openDate = openDate

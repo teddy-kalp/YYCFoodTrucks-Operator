@@ -11,7 +11,7 @@ struct TruckProfile: View {
     
     var truck: Truck
     var schedules: [Schedule]
-    var locations: [LandMark]
+    var locations: [Location]
     
     
     var body: some View {

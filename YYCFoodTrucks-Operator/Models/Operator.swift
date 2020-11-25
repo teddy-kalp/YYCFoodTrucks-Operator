@@ -14,5 +14,6 @@ class Operator: Identifiable, Codable{
     init(name: String, trucks: [Truck]){
         self.name = name
         self.trucks = trucks
+
     }
 }

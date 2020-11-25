@@ -8,9 +8,10 @@
 import SwiftUI
 
 struct TruckList: View {
-    var locations: [LandMark]
+    var locations: [Location]
     var schedules: [Schedule]
     var trucks: [Truck]
+    @State var menuToggle = false
     
     var body: some View {
         NavigationView(){
@@ -46,19 +47,29 @@ struct TruckList: View {
                 .navigationBarTitle("My Trucks")
                 .navigationBarItems(trailing:
                     Group{
-                    NavigationLink(destination: NewTruck()){
-                        Text("Add Truck")
-                            .foregroundColor(primColor)
-                    }
+                        Button(action: {menuToggle.toggle()}){
+                            Text("Add Truck..")
+                                .foregroundColor(primColor)
+                            }
+                        if (menuToggle){
+                            HStack{
+                                NavigationLink(destination: NewTruck()){
+                                    Text("New Truck")
+                                    Image(systemName: "plus.circle")
+                                }
+                                NavigationLink(destination: addTruck()){
+                                    Text("Existing Truck")
+                                    Image(systemName: "car.2.fill")
+                                    
+                                }
+                            }
+                        }
                     }
                 )
                 Spacer()
             }
         }
         
-    }
-    func AddTruck(){
-        print("Navigate from here to add truck page")
     }
 }
 
