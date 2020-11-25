@@ -9,12 +9,11 @@ import Foundation
 
 class Operator: Identifiable, Codable{
     var name: String
-    var email: String
     var trucks: [Truck]
     
-    init(name: String, email: String, trucks: [Truck]){
+    init(name: String, trucks: [Truck]){
         self.name = name
         self.trucks = trucks
-        self.email = email
+
     }
 }

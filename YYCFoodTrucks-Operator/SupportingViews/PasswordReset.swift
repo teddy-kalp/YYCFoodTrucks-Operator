@@ -19,10 +19,10 @@ struct PasswordReset: View {
     @State var errorText: String = ""
     @State var validOperator: Bool = true
     @State private var showAlert = false
+
     
     
     var body: some View {
-        NavigationView(){
             VStack(alignment: .center){
                 Text("Enter your account email address")
                     //.font(.callout)
@@ -43,6 +43,7 @@ struct PasswordReset: View {
                     }
                 }))
                     user_email = " ";
+                    self.showAlert = true;
                     
                 }) {
                     Text("RESET")
@@ -55,6 +56,24 @@ struct PasswordReset: View {
                         .cornerRadius(15.0)
                         
                 }
+                if $showAlert.wrappedValue {
+                    ZStack {
+                        Color.white
+                        VStack {
+                            Text("Password reset email sent - please check your inbox")
+                                .padding()
+                            Button(action: {
+                                self.showAlert = false
+
+                                
+                            }, label: {
+                                Text("Close")
+                            })
+                        }.padding()
+                    }
+                    .frame(width: 300, height: 200)
+                    .cornerRadius(20).shadow(radius: 20)
+                }
                 Spacer()
             } .padding(.top, 50)
                 .frame(width: 300)
@@ -63,7 +82,6 @@ struct PasswordReset: View {
             
                     
         }
-    }
 
 }
     
