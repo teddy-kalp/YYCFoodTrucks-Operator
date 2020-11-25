@@ -56,7 +56,7 @@ struct PasswordReset: View {
                         .cornerRadius(15.0)
                         
                 }
-                if $showAlert.wrappedValue {
+                if showAlert {
                     ZStack {
                         Color.white
                         VStack {
