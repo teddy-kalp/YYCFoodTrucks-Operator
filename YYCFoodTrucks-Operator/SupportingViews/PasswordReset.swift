@@ -20,8 +20,6 @@ struct PasswordReset: View {
     @State var validOperator: Bool = true
     @State private var showAlert = false
 
-    
-    
     var body: some View {
             VStack(alignment: .center){
                 Text("Enter your account email address")
