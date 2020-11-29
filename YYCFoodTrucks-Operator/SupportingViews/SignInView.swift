@@ -35,6 +35,7 @@ struct SignInView : View {
                 self.password = ""
             }
         }
+        session.cur_page = nav.Trucks
     }
     
     var body: some View {
