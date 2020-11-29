@@ -10,6 +10,7 @@ import SwiftUI
 struct Schedules: View {
     var schedules: [Schedule]
     var trucks: [Truck]
+    var locations: [Location]
     
     var body: some View {
         NavigationView{
@@ -28,7 +29,17 @@ struct Schedules: View {
                                     }
                                 }
                                 Divider()
-                                HStack(alignment: .center){
+                                VStack(alignment: .center){
+                                    ForEach(self.schedules){schedule in
+                                        if (schedule.truckId == truck.id && schedule.closeDate > Date()){
+                                            var location = findLocation(schedule: schedule, locations: locations)
+                                            if (location != nil){
+                                                HStack{
+                                                    Text(location!.address)
+                                                }
+                                            }
+                                        }
+                                    }
                                     Spacer()
                                     Text("No Schedules")
                                     Spacer()
@@ -54,6 +65,15 @@ struct Schedules: View {
             }.navigationTitle("Schedules")
         }
     }
+}
+
+func findLocation(schedule: Schedule, locations: [Location]) -> Location?{
+    for location in locations{
+        if (location.locationId == schedule.locationId){
+            return location
+        }
+    }
+    return nil
 }
 /*
 struct Schedules_Previews: PreviewProvider {

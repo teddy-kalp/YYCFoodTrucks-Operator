@@ -27,7 +27,7 @@ struct LoginView: View {
                 case nav.Trucks:
                     TruckList(locations: LocationRepo.landmarks, schedules: ScheduleRepo.schedules, trucks: OperatorRepo.operator_trucks, events: EventRepo.events)
                 case nav.Schedule:
-                    Schedules(schedules: ScheduleRepo.schedules, trucks: OperatorRepo.operator_trucks)
+                    Schedules(schedules: ScheduleRepo.schedules, trucks: OperatorRepo.operator_trucks, locations: LocationRepo.landmarks)
                 case nav.Profile:
                     UserProfile()
                 }

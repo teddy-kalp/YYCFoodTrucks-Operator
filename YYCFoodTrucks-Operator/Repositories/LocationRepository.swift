@@ -16,7 +16,6 @@ class LocationRepository: ObservableObject{
     
     init() {
         self.loadData()
-        convertAddressToCoordinatesAndStore(address: "814 4 Ave NW, Calgary AB")
     }
     
     func loadData(){
@@ -27,8 +26,6 @@ class LocationRepository: ObservableObject{
             }
             self.landmarks = documents.map{(queryDocumentSnapshot) -> Location in
                 let data = queryDocumentSnapshot.data()
-                
-                
                 let address = data["address"] as? String ?? ""
                 let latitude = data["latitude"] as? Double ?? 0
                 let longitude = data["longitude"] as? Double ?? 0
@@ -42,7 +39,7 @@ class LocationRepository: ObservableObject{
     }
     
 // function to convert an address to coordinatess
-    func convertAddressToCoordinatesAndStore(address: String){
+    func convertAddressToCoordinatesAndStore(address: String, id: String){
         let geocoder = CLGeocoder()
         geocoder.geocodeAddressString(address) {
             placemarks, error in
@@ -52,17 +49,21 @@ class LocationRepository: ObservableObject{
             var locationInDB = false
             // check to see if we have the location in the database
             for landmark in self.landmarks{
+                print(landmark.address)
+                print(landmark.latitude)
+                print(landmark.longitude)
                 if (landmark.latitude) == lat && (landmark.longitude == lon){
                     locationInDB = true
                     break
+                }
+                else{
+                    continue
                 }
             }
             // if the location is not in the database, store it
             if (!locationInDB){
                 do{
                     let landmarkToAdd = Location(address: address, latitude: lat!, longitude: lon!)
-                    let id = randomString(length: 20)
-                    print(id)
                     let _ = try self.db.collection("LandMarks").document(id).setData(from: landmarkToAdd)
                 } catch {
                     fatalError("Unable to encode task: \(error.localizedDescription)")
