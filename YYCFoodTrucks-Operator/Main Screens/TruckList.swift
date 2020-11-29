@@ -10,7 +10,7 @@ import SwiftUI
 struct TruckList: View {
     var locations: [Location]
     var schedules: [Schedule]
-    var trucks: [Truck]
+    @ObservedObject var OperatorRepo = OperatorRepository()
     var events: [Event]
     @State var menuToggle = false
     
@@ -19,7 +19,7 @@ struct TruckList: View {
             VStack(){
                 VStack(){
                     ScrollView{
-                        ForEach(trucks){ truck in
+                        ForEach(self.OperatorRepo.operator_trucks){ truck in
                                 HStack{
                                     NavigationLink(destination: TruckProfile(truck: truck, schedules: schedules, locations: locations)){
                                     FirebaseImage(id:(truck.logo), width: Int(UIScreen.main.bounds.width/4), height: 175/2)

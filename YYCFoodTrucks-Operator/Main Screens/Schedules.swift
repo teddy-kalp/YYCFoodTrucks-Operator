@@ -9,7 +9,8 @@ import SwiftUI
 
 struct Schedules: View {
     var schedules: [Schedule]
-    var trucks: [Truck]
+    @ObservedObject var OperatorRepo = OperatorRepository()
+//    var trucks: [Truck]
     var locations: [Location]
     
     var body: some View {
@@ -18,7 +19,7 @@ struct Schedules: View {
                 HStack{
                     Spacer()
                     VStack{
-                        ForEach(self.trucks){ truck in
+                        ForEach(OperatorRepo.operator_trucks){ truck in
                             VStack(alignment: .leading){
                                 HStack{
                                     Text(truck.name)

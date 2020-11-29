@@ -44,10 +44,11 @@ class OperatorRepository: ObservableObject{
                         for truckId in truck_Ids{
                             let trimmedId = truckId.trimmingCharacters(in: .whitespacesAndNewlines)
                             for truck in self.TruckRepo.trucks{
-                                print(trimmedId)
-                                print(truck.id)
+//                                print(trimmedId)
+//                                print(truck.id)
                                 if (trimmedId == truck.id){
                                     self.operator_trucks.append(truck)
+                                    print("added \(truck.id)")
                                     break
                                 }
                             }

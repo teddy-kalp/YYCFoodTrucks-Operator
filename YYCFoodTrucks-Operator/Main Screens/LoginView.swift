@@ -25,9 +25,9 @@ struct LoginView: View {
             if(session.session != nil){
                 switch(session.cur_page){
                 case nav.Trucks:
-                    TruckList(locations: LocationRepo.landmarks, schedules: ScheduleRepo.schedules, trucks: OperatorRepo.operator_trucks, events: EventRepo.events)
+                    TruckList(locations: LocationRepo.landmarks, schedules: ScheduleRepo.schedules,  events: EventRepo.events)
                 case nav.Schedule:
-                    Schedules(schedules: ScheduleRepo.schedules, trucks: OperatorRepo.operator_trucks, locations: LocationRepo.landmarks)
+                    Schedules(schedules: ScheduleRepo.schedules, locations: LocationRepo.landmarks)
                 case nav.Profile:
                     UserProfile()
                 }

@@ -9,7 +9,8 @@
 import SwiftUI
 
 struct SignInView : View {
-
+    
+    @ObservedObject var OperatorRepo = OperatorRepository()
     @State var email: String = ""
     @State var password: String = ""
     @State var loading = false
@@ -34,9 +35,11 @@ struct SignInView : View {
             } else {
                 self.email = ""
                 self.password = ""
+                session.cur_page = nav.Trucks
+                OperatorRepo.loadData()
+
             }
         }
-        session.cur_page = nav.Trucks
     }
     
     var body: some View {
