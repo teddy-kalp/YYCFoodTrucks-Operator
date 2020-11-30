@@ -2,7 +2,7 @@
 //  PasswordReset.swift
 //  YYCFoodTrucks-Operator
 //
-//  Created by admin on 2020-11-22.
+//  Created by Bojana on 2020-11-22.
 //
 
 import SwiftUI

@@ -42,6 +42,12 @@
 		794BF9922553299700B015C8 /* Operator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794BF9912553299700B015C8 /* Operator.swift */; };
 		794BF99525532AB300B015C8 /* OperatorRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794BF99425532AB300B015C8 /* OperatorRepository.swift */; };
 		84090919256AF06700773B85 /* PasswordReset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84090918256AF06700773B85 /* PasswordReset.swift */; };
+		84894B232572E917000ECBA5 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84894B222572E917000ECBA5 /* Event.swift */; };
+		84894B262572EA2E000ECBA5 /* EventSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84894B252572EA2E000ECBA5 /* EventSchedule.swift */; };
+		84894B292572EB10000ECBA5 /* EventRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84894B282572EB10000ECBA5 /* EventRepository.swift */; };
+		84894B2C2572EB54000ECBA5 /* EventScheduleRespository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84894B2B2572EB54000ECBA5 /* EventScheduleRespository.swift */; };
+		84894B2F2572EDBD000ECBA5 /* NewEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84894B2E2572EDBD000ECBA5 /* NewEvent.swift */; };
+		84894B322572F873000ECBA5 /* EventProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84894B312572F873000ECBA5 /* EventProfile.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -81,6 +87,12 @@
 		794BF9912553299700B015C8 /* Operator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Operator.swift; sourceTree = "<group>"; };
 		794BF99425532AB300B015C8 /* OperatorRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperatorRepository.swift; sourceTree = "<group>"; };
 		84090918256AF06700773B85 /* PasswordReset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordReset.swift; sourceTree = "<group>"; };
+		84894B222572E917000ECBA5 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		84894B252572EA2E000ECBA5 /* EventSchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventSchedule.swift; sourceTree = "<group>"; };
+		84894B282572EB10000ECBA5 /* EventRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventRepository.swift; sourceTree = "<group>"; };
+		84894B2B2572EB54000ECBA5 /* EventScheduleRespository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventScheduleRespository.swift; sourceTree = "<group>"; };
+		84894B2E2572EDBD000ECBA5 /* NewEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewEvent.swift; sourceTree = "<group>"; };
+		84894B312572F873000ECBA5 /* EventProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventProfile.swift; sourceTree = "<group>"; };
 		91C3E82DD6162C48562C492B /* Pods-YYCFoodTrucks-Operator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YYCFoodTrucks-Operator.debug.xcconfig"; path = "Target Support Files/Pods-YYCFoodTrucks-Operator/Pods-YYCFoodTrucks-Operator.debug.xcconfig"; sourceTree = "<group>"; };
 		A054A5692A0C4C4AAD010BC5 /* Pods_YYCFoodTrucks_Operator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YYCFoodTrucks_Operator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBB64FFAB344469E8624FFE9 /* Pods-YYCFoodTrucks-Operator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YYCFoodTrucks-Operator.release.xcconfig"; path = "Target Support Files/Pods-YYCFoodTrucks-Operator/Pods-YYCFoodTrucks-Operator.release.xcconfig"; sourceTree = "<group>"; };
@@ -117,6 +129,8 @@
 				188065202559C5E2003374A8 /* ImagePickerView.swift */,
 				188065232559E8F0003374A8 /* NewSchedule.swift */,
 				84090918256AF06700773B85 /* PasswordReset.swift */,
+				84894B2E2572EDBD000ECBA5 /* NewEvent.swift */,
+				84894B312572F873000ECBA5 /* EventProfile.swift */,
 			);
 			path = SupportingViews;
 			sourceTree = "<group>";
@@ -214,6 +228,8 @@
 				188064AE2558DE34003374A8 /* User.swift */,
 				1880651325593665003374A8 /* FirebaseImageLoader.swift */,
 				1880651D2559C49F003374A8 /* ImagePicker.swift */,
+				84894B222572E917000ECBA5 /* Event.swift */,
+				84894B252572EA2E000ECBA5 /* EventSchedule.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -226,6 +242,8 @@
 				794BF9822553273000B015C8 /* ScheduleRepository.swift */,
 				794BF9882553278200B015C8 /* FoodCategoryRepository.swift */,
 				794BF99425532AB300B015C8 /* OperatorRepository.swift */,
+				84894B282572EB10000ECBA5 /* EventRepository.swift */,
+				84894B2B2572EB54000ECBA5 /* EventScheduleRespository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -366,6 +384,7 @@
 				18806510255935B2003374A8 /* global.swift in Sources */,
 				188064B32558E14D003374A8 /* SignInView.swift in Sources */,
 				188064F4255933E8003374A8 /* FirebaseImage.swift in Sources */,
+				84894B322572F873000ECBA5 /* EventProfile.swift in Sources */,
 				1880651E2559C49F003374A8 /* ImagePicker.swift in Sources */,
 				188065212559C5E2003374A8 /* ImagePickerView.swift in Sources */,
 				188064C1255930B5003374A8 /* TruckProfile.swift in Sources */,
@@ -375,6 +394,8 @@
 				794BF92425531F6400B015C8 /* AppDelegate.swift in Sources */,
 				794BF9922553299700B015C8 /* Operator.swift in Sources */,
 				794BF98F2553284300B015C8 /* ImageLoader.swift in Sources */,
+				84894B292572EB10000ECBA5 /* EventRepository.swift in Sources */,
+				84894B232572E917000ECBA5 /* Event.swift in Sources */,
 				794BF97D255326DA00B015C8 /* TruckRepository.swift in Sources */,
 				794BF99525532AB300B015C8 /* OperatorRepository.swift in Sources */,
 				794BF9862553275800B015C8 /* Schedule.swift in Sources */,
@@ -387,9 +408,12 @@
 				794BF98C255327A600B015C8 /* FoodCategory.swift in Sources */,
 				794BF92625531F6400B015C8 /* SceneDelegate.swift in Sources */,
 				794BF9892553278200B015C8 /* FoodCategoryRepository.swift in Sources */,
+				84894B2C2572EB54000ECBA5 /* EventScheduleRespository.swift in Sources */,
+				84894B2F2572EDBD000ECBA5 /* NewEvent.swift in Sources */,
 				794BF92825531F6400B015C8 /* LoginView.swift in Sources */,
 				84090919256AF06700773B85 /* PasswordReset.swift in Sources */,
 				1880651425593665003374A8 /* FirebaseImageLoader.swift in Sources */,
+				84894B262572EA2E000ECBA5 /* EventSchedule.swift in Sources */,
 				188064AB2558DD8A003374A8 /* SessionStore.swift in Sources */,
 				794BF980255326F200B015C8 /* Truck.swift in Sources */,
 			);

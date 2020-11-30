@@ -36,31 +36,23 @@ struct NewSchedule: View {
                 }
                 HStack{
                     VStack{
-                        TextField("Address*", text: $address)
+                        TextField("Full Address, including Street, City, Province and Postal Code*", text: $address)
                             .textFieldStyle(RoundedBorderTextFieldStyle())
-                            .frame(width: 150)
-                    }
-                    Spacer()
-                    VStack{
-                        TextField("City*", text: $city)
-                            .textFieldStyle(RoundedBorderTextFieldStyle())
-                            .frame(width: 150)
+                            .frame(width: (UIScreen.main.bounds.width))
                     }
                 }
-                HStack{
-                    VStack{
-                        TextField("Province*", text: $province)
-                            .textFieldStyle(RoundedBorderTextFieldStyle())
-                            .frame(width: 150)
+                if (self.address != ""){
+                    let fileredAddresses = LocationRepo.landmarks.filter{$0.address.contains(self.address)}
+                    ForEach(fileredAddresses){address in
+                        Button(action: {
+                            self.address = address.address
+                        }){
+                            Text(address.address)
+                                .foregroundColor(.black)
+                        }
                     }
-                    Spacer()
-                    VStack{
-                        TextField("Postal/Zip Code", text: $postal)
-                            .textFieldStyle(RoundedBorderTextFieldStyle())
-                            .frame(width: 150)
-                    }
-                    
                 }
+                Divider()
                 Button(action: {
                     addSchedule()
                 }){
@@ -79,16 +71,8 @@ struct NewSchedule: View {
             error = true
             print("Address is wrong")
         }
-        else if (self.city == ""){
-            error = true
-            print("City is wrong")
-        }
-        else if (self.province == ""){
-            error = true
-            print("Province is wrong")
-        }
         else{
-            let fullAddress = "\(address), \(city) \(province), \(postal)"
+            let fullAddress = self.address
             print(fullAddress)
             let locationId = randomString(length: 20)
             LocationRepo.convertAddressToCoordinatesAndStore(address: fullAddress, id: locationId)

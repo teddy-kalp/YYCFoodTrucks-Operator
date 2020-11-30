@@ -29,7 +29,7 @@ class LocationRepository: ObservableObject{
                 let address = data["address"] as? String ?? ""
                 let latitude = data["latitude"] as? Double ?? 0
                 let longitude = data["longitude"] as? Double ?? 0
-                let locationId = data["locationId"] as? String ?? ""
+                let locationId = queryDocumentSnapshot.documentID as? String ?? ""
                 
                 let location = Location(address: address, latitude: latitude, longitude: longitude)
                 location.locationId = locationId
