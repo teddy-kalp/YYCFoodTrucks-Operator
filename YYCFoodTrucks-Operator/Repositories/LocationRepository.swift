@@ -19,7 +19,7 @@ class LocationRepository: ObservableObject{
     }
     
     func loadData(){
-        db.collection("LandMarks").order(by: "locationId").addSnapshotListener{(querySnapshot, error) in
+        db.collection("LandMarks").addSnapshotListener{(querySnapshot, error) in
             guard let documents = querySnapshot?.documents else{
                 print("No Documents")
                 return
@@ -29,7 +29,7 @@ class LocationRepository: ObservableObject{
                 let address = data["address"] as? String ?? ""
                 let latitude = data["latitude"] as? Double ?? 0
                 let longitude = data["longitude"] as? Double ?? 0
-                let locationId = data["locationId"] as? String ?? ""
+                let locationId = queryDocumentSnapshot.documentID as? String ?? ""
                 
                 let location = Location(address: address, latitude: latitude, longitude: longitude)
                 location.locationId = locationId
@@ -71,6 +71,15 @@ class LocationRepository: ObservableObject{
                 
             }
         }
+    }
+    
+    func findLocation(schedule: Schedule) -> Location?{
+        for location in landmarks{
+            if (location.locationId == schedule.locationId){
+                return location
+            }
+        }
+        return nil
     }
 }
 
