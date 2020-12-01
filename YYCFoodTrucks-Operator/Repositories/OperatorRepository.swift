@@ -14,15 +14,20 @@ import FirebaseFirestoreSwift
 class OperatorRepository: ObservableObject{
     @Published var operators = [Operator]()
     @Published var operator_trucks = [Truck]()
+    var user = Auth.auth().currentUser
+    @Published var userName = ""
+    @Published var email = Auth.auth().currentUser?.email ?? "Email not found"
     // will be used to find the trucks for the operator
     @ObservedObject var TruckRepo = TruckRespository()
     private let db = Firestore.firestore()
     @EnvironmentObject var session: SessionStore
-    var user = Auth.auth().currentUser
+    
     
     init(){
         loadData()
     }
+    
+
     
     func loadData(){
         print("opertor rep loading")
@@ -35,6 +40,7 @@ class OperatorRepository: ObservableObject{
                     print("Got operator information (truck_ids)", querySnapshot!.get("truck_ids"))
                     self.operators.removeAll()
                     self.operator_trucks.removeAll()
+                    self.userName = querySnapshot!.get("name") as? String ?? "No Name"
                     
                     if (querySnapshot!.get("name") as? String ?? "null") != nil{
                         print("got name")

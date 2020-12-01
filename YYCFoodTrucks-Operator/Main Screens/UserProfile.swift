@@ -9,11 +9,11 @@ import SwiftUI
 
 struct UserProfile: View {
     @EnvironmentObject var session: SessionStore
+    @ObservedObject var OperatorRepo = OperatorRepository()
     var body: some View {
-        Text("User Name")
-        Text("Email")
-        Text("Insert Change Password Option Here")
-        
+        Text("Signed in as \(OperatorRepo.userName)")
+        Text(OperatorRepo.email)
+
         Button(action: signOut) {
             Text("Sign Out")
                 .font(.headline)
