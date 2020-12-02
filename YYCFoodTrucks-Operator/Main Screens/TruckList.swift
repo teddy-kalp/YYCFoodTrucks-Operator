@@ -47,7 +47,7 @@ struct TruckList: View {
                         }
                         
                         VStack(alignment:.leading){
-                        Text("   My Events")
+                        Text("My Events")
                             .font(.largeTitle)
                             .fontWeight(.bold)
                             .foregroundColor(.black)

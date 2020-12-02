@@ -198,9 +198,13 @@ struct addTruck: View{
                     self.presentation.wrappedValue.dismiss()
                 }){
                     Text("Add Truck")
-                        .font(.title)
-                        .border(primColor, width: 1)
-                        .foregroundColor(primColor)
+                        .font(.headline)
+                        .foregroundColor(.white)
+                        .padding()
+                        .frame(width: 300, height: 50)
+                        .background(primColor)
+                        .shadow(radius: 10)
+                        .cornerRadius(15.0)
                 }
             }
         }
