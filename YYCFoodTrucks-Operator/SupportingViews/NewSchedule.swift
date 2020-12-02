@@ -73,9 +73,18 @@ struct NewSchedule: View {
         }
         else{
             let fullAddress = self.address
-            print(fullAddress)
-            let locationId = randomString(length: 20)
-            LocationRepo.convertAddressToCoordinatesAndStore(address: fullAddress, id: locationId)
+            var addressFound = false
+            var locationId = randomString(length: 20)
+            for location in LocationRepo.landmarks{
+                if (location.address == fullAddress){
+                    addressFound = true
+                    locationId = location.locationId!
+                    break
+                }
+            }
+            if (!addressFound){
+                LocationRepo.convertAddressToCoordinatesAndStore(address: fullAddress, id: locationId)
+            }
             ScheduleRepo.addSchedule(locationId: locationId, truckId: truck.id!, openDate: start, closeDate: end)
             self.presentation.wrappedValue.dismiss()
         }
