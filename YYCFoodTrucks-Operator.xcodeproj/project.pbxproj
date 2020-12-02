@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		11F0EE054887B80B97044528 /* Pods_YYCFoodTrucks_Operator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A054A5692A0C4C4AAD010BC5 /* Pods_YYCFoodTrucks_Operator.framework */; };
+		1818F7DA25780630001CA73A /* NewSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1818F7D925780630001CA73A /* NewSelection.swift */; };
 		188064A62558DCCD003374A8 /* TruckList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188064A52558DCCD003374A8 /* TruckList.swift */; };
 		188064AB2558DD8A003374A8 /* SessionStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188064AA2558DD8A003374A8 /* SessionStore.swift */; };
 		188064AF2558DE34003374A8 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188064AE2558DE34003374A8 /* User.swift */; };
@@ -51,6 +52,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1818F7D925780630001CA73A /* NewSelection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewSelection.swift; sourceTree = "<group>"; };
 		188064A52558DCCD003374A8 /* TruckList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TruckList.swift; sourceTree = "<group>"; };
 		188064AA2558DD8A003374A8 /* SessionStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionStore.swift; sourceTree = "<group>"; };
 		188064AE2558DE34003374A8 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 				84090918256AF06700773B85 /* PasswordReset.swift */,
 				84894B2E2572EDBD000ECBA5 /* NewEvent.swift */,
 				84894B312572F873000ECBA5 /* EventProfile.swift */,
+				1818F7D925780630001CA73A /* NewSelection.swift */,
 			);
 			path = SupportingViews;
 			sourceTree = "<group>";
@@ -398,6 +401,7 @@
 				84894B232572E917000ECBA5 /* Event.swift in Sources */,
 				794BF97D255326DA00B015C8 /* TruckRepository.swift in Sources */,
 				794BF99525532AB300B015C8 /* OperatorRepository.swift in Sources */,
+				1818F7DA25780630001CA73A /* NewSelection.swift in Sources */,
 				794BF9862553275800B015C8 /* Schedule.swift in Sources */,
 				188064AF2558DE34003374A8 /* User.swift in Sources */,
 				188064A62558DCCD003374A8 /* TruckList.swift in Sources */,

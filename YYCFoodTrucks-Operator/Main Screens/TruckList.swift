@@ -78,32 +78,16 @@ struct TruckList: View {
                     .navigationBarTitle("My Trucks")
                     .navigationBarItems(trailing:
                         Group{
-                            Spacer()
-                            Button(action: {menuToggle.toggle()}){
-                                Text("Add Truck..")
+                            Spacer() 
+                            NavigationLink(destination: NewSelection())
+                            {
+                                Text("Add Truck/Event")
                                     .foregroundColor(primColor)
-                                }
-                            if (menuToggle){
-                                HStack{
-                                    NavigationLink(destination: NewTruck()){
-                                        Text("New Truck")
-                                        Image(systemName: "plus.circle")
-                                    }
-                                    NavigationLink(destination: addTruck()){
-                                        Text("Existing Truck")
-                                        Image(systemName: "car.2.fill")
-                                        
-                                    }
-                                }
+                                    
                             }
-                            
-                            NavigationLink(destination: NewEvent()){
-                                    Text("Add Event..")
-                                        .foregroundColor(primColor)
-                                }
-                                
-                           
-                        }
+       
+                            }
+
                     )
                     Spacer()
                 }
