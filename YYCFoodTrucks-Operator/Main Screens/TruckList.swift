@@ -78,9 +78,7 @@ struct TruckList: View {
                     .navigationBarTitle("My Trucks")
                     .navigationBarItems(trailing:
                         Group{
-                            Spacer()
-                            
-                            
+                            Spacer() 
                             NavigationLink(destination: NewSelection())
                             {
                                 Text("Add Truck/Event")
@@ -88,12 +86,8 @@ struct TruckList: View {
                                     
                             }
        
-                            /*NavigationLink(destination: NewEvent()){
-                                    Text("Add Event..")
-                                        .foregroundColor(primColor)
-                                }
-                             */
                             }
+
                     )
                     Spacer()
                 }
