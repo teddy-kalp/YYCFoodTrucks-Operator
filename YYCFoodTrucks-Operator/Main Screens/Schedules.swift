@@ -9,7 +9,9 @@ import SwiftUI
 
 struct Schedules: View {
     var schedules: [Schedule]
-    var trucks: [Truck]
+    @ObservedObject var OperatorRepo = OperatorRepository()
+//    var trucks: [Truck]
+    var locations: [Location]
     
     var body: some View {
         NavigationView{
@@ -17,7 +19,7 @@ struct Schedules: View {
                 HStack{
                     Spacer()
                     VStack{
-                        ForEach(self.trucks){ truck in
+                        ForEach(OperatorRepo.operator_trucks){ truck in
                             VStack(alignment: .leading){
                                 HStack{
                                     Text(truck.name)
@@ -28,10 +30,30 @@ struct Schedules: View {
                                     }
                                 }
                                 Divider()
-                                HStack(alignment: .center){
-                                    Spacer()
-                                    Text("No Schedules")
-                                    Spacer()
+                                VStack(alignment: .center){
+                                    ForEach(self.schedules){schedule in
+                                        if (schedule.truckId == truck.id && schedule.closeDate > Date()){
+                                            var location = findLocation(schedule: schedule, locations: locations)
+                                            if (location != nil){
+                                                VStack(alignment: .center){
+                                                    HStack{
+                                                        Text(location!.address)
+                                                            .foregroundColor(primColor)
+                                                        Button(action: {}){
+                                                            Image(systemName: "minus.circle.fill")
+                                                                .foregroundColor(.red)
+                                                        }
+                                                        .padding(.leading, 7)
+                                                    }
+                                                    .padding(.leading, 5)
+                                                    let schedule = generateStringDate(schedule: schedule)
+                                                    Text(schedule.0)
+                                                    Text("To")
+                                                    Text(schedule.1)
+                                                }
+                                            }
+                                        }
+                                    }
                                 }
                             }.padding(.bottom, 30)
                             .padding(.top, 15)
@@ -54,6 +76,27 @@ struct Schedules: View {
             }.navigationTitle("Schedules")
         }
     }
+}
+
+func findLocation(schedule: Schedule, locations: [Location]) -> Location?{
+    for location in locations{
+        if (location.locationId! == schedule.locationId){
+            return location
+        }
+    }
+    return nil
+}
+
+func generateStringDate(schedule: Schedule) -> (String,String)
+{
+    let stringDate = DateFormatter()
+    stringDate.dateFormat = "MM/dd/yyyy, HH:MM a"
+    
+    let openDate = stringDate.string(from: schedule.openDate)
+    let closeDate = stringDate.string(from: schedule.closeDate)
+    
+    return (openDate, closeDate)
+    
 }
 /*
 struct Schedules_Previews: PreviewProvider {

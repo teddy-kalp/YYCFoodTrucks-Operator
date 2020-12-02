@@ -11,6 +11,9 @@ struct LoginView: View {
     @ObservedObject var LocationRepo = LocationRepository()
     @ObservedObject var ScheduleRepo = ScheduleRespository()
     @ObservedObject var TruckRepo = TruckRespository()
+    @ObservedObject var EventRepo = EventRespository()
+    
+    
     
     @EnvironmentObject var session: SessionStore
     
@@ -22,9 +25,9 @@ struct LoginView: View {
             if(session.session != nil){
                 switch(session.cur_page){
                 case nav.Trucks:
-                    TruckList(locations: LocationRepo.landmarks, schedules: ScheduleRepo.schedules, trucks: OperatorRepo.operator_trucks)
+                    TruckList(locations: LocationRepo.landmarks, schedules: ScheduleRepo.schedules,  events: EventRepo.events)
                 case nav.Schedule:
-                    Schedules(schedules: ScheduleRepo.schedules, trucks: OperatorRepo.operator_trucks)
+                    Schedules(schedules: ScheduleRepo.schedules, locations: LocationRepo.landmarks)
                 case nav.Profile:
                     UserProfile()
                 }

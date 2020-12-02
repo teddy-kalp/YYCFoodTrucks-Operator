@@ -8,19 +8,26 @@
 import SwiftUI
 import FirebaseStorage
 
+var fillerCategory = FoodCategory(name: "", id: -1, img: "")
 
 struct NewTruck: View {
     @ObservedObject var truckRepo = TruckRespository()
     @ObservedObject var operatorRepo = OperatorRepository()
+    @ObservedObject var categoryRepo = FoodCategoryRepository()
     @Environment(\.presentationMode) var presentation
     @State var truckName: String = ""
     @State var description: String = ""
     @State var error: Bool = false
-    @State var category = 0
+    
+    @State var chosenCategory = fillerCategory
+    @State var categoryText = "Choose Category"
+    
+    @State var showCategories = false
     
     @State var bannerImage: UIImage?
     @State var truckImage: UIImage?
     @State var menuImage: UIImage?
+    
 
     
     var body: some View {
@@ -39,7 +46,29 @@ struct NewTruck: View {
                 TextField("Description", text: $description)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .frame(width: 300)
+                
+                Button(action: {
+                    showCategories.toggle()
+                }){
+                    Text(categoryText)
+                        .foregroundColor(primColor)
+                }
+                
+                if (showCategories){
+                    ForEach(categoryRepo.foodCategories){category in
+                        Button(action: {
+                            chosenCategory = category
+                            categoryText = category.name
+                            showCategories = false
+                        }){
+                            Text(category.name)
+                                .foregroundColor(.black)
+                        }
+                    }
+                }
+                
                 menuPicker
+                
                 Button(action: addTruckToRepo){
                     Text("SUBMIT")
                         .font(.headline)
@@ -50,6 +79,7 @@ struct NewTruck: View {
                         .shadow(radius: 10)
                         .cornerRadius(15.0)
                 }
+                
                 if (error){
                     Text("Please Fill out all fields")
                         .foregroundColor(.red)
@@ -88,6 +118,11 @@ struct NewTruck: View {
             print("Description is empty")
             return
         }
+        else if (chosenCategory.id == -1){
+            error = true
+            print("Chosee Description Please")
+            return
+        }
         else{
             error = false
             print("All Fields Filled")
@@ -110,7 +145,7 @@ struct NewTruck: View {
         ref = storage.reference().child(menuUrl)
         ref.putData((menuImage?.jpegData(compressionQuality: 0.3))!)
         
-        let addedTruck = Truck(name: truckName, logo: truckUrl, category_id: category, menu: menuUrl, description: description)
+        let addedTruck = Truck(name: truckName, logo: truckUrl, category_id: chosenCategory.id, menu: menuUrl, description: description)
         
         // need to build this function
         let truck_id = randomString(length: 20)

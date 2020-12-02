@@ -8,12 +8,17 @@
 import SwiftUI
 
 struct NewSchedule: View {
+    @Environment(\.presentationMode) var presentation
+    @ObservedObject var LocationRepo = LocationRepository()
+    @ObservedObject var ScheduleRepo = ScheduleRespository()
     @State var start = Date()
     @State var end = Date()
+    @State var city = ""
+    @State var province = ""
+    @State var postal = ""
     @State var address = ""
     @State var truck: Truck
-    @State var recurring = false
-    @State var repeat_option = ""
+    @State var error = false
     
     var body: some View {
         HStack(){
@@ -30,36 +35,53 @@ struct NewSchedule: View {
                     DatePicker("End", selection: $end, displayedComponents: [.date, .hourAndMinute])
                 }
                 HStack{
-                    Text("Address")
-                    Spacer()
-                    TextField("", text: $address)
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
-                        .frame(width: 300)
-                }
-                HStack{
-                    Toggle(isOn: $recurring){
-                        Text("Recurring")
-                    }
-                }
-                if recurring {
                     VStack{
-                        Divider()
-                        Picker("Repeats",selection: $repeat_option){
-                            Text("Weekly")
-                            Text("Daily")
-                            Text("Weekdays")
-                            Text("Other")
-                        }.pickerStyle(DefaultPickerStyle())
+                        TextField("Full Address, including Street, City, Province and Postal Code*", text: $address)
+                            .textFieldStyle(RoundedBorderTextFieldStyle())
+                            .frame(width: (UIScreen.main.bounds.width))
                     }
-                    
-                    
                 }
-                Spacer()
+                if (self.address != ""){
+                    let fileredAddresses = LocationRepo.landmarks.filter{$0.address.contains(self.address)}
+                    ForEach(fileredAddresses){address in
+                        Button(action: {
+                            self.address = address.address
+                        }){
+                            Text(address.address)
+                                .foregroundColor(.black)
+                        }
+                    }
+                }
+                Divider()
+                Button(action: {
+                    addSchedule()
+                }){
+                    Text("Add Schedule")
+                }
+                if (error){
+                    Text("Please fill out all fields correctly")
+                        .foregroundColor(.red)
+                }
             }
         }.padding()
-        
+    }
+    
+    func addSchedule(){
+        if (self.address == ""){
+            error = true
+            print("Address is wrong")
+        }
+        else{
+            let fullAddress = self.address
+            print(fullAddress)
+            let locationId = randomString(length: 20)
+            LocationRepo.convertAddressToCoordinatesAndStore(address: fullAddress, id: locationId)
+            ScheduleRepo.addSchedule(locationId: locationId, truckId: truck.id!, openDate: start, closeDate: end)
+            self.presentation.wrappedValue.dismiss()
+        }
     }
 }
+
 /*
 struct NewSchedule_Previews: PreviewProvider {
     static var previews: some View {

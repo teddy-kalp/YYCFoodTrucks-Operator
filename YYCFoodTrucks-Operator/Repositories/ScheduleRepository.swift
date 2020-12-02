@@ -14,8 +14,7 @@ class ScheduleRespository: ObservableObject{
     @Published var schedules = [Schedule]()
     
     init() {
-        //removeOldSchedules()
-        loadData()
+        self.loadData()
     }
     
     func loadData(){
@@ -25,7 +24,6 @@ class ScheduleRespository: ObservableObject{
                 return
             }
             let sched = documents.filter{$0["openDate"] != nil && $0["closeDate"] != nil}
-            
             self.schedules = sched.map{(queryDocumentSnapshot) -> Schedule in
                 let data = queryDocumentSnapshot.data()
                 
@@ -41,28 +39,12 @@ class ScheduleRespository: ObservableObject{
             }
         }
     }
-    
-    func removeOldSchedules(){
-        var idsToRemove = [String]()
-        db.collection("Schedules").addSnapshotListener{(querySnapshot, error) in
-            guard let documents = querySnapshot?.documents else{
-                print("No Documents")
-                return
-            }
-            
-            for doc in documents{
-                let data = doc.data()
-                let id = doc.documentID
-                let closeTimestamp = data["closeDate"] as? Timestamp ?? nil
-                let closeDate = closeTimestamp!.dateValue()
-                if (closeDate < Date()){
-                    idsToRemove.append(id)
-                }
-            }
-            
-            for id in idsToRemove{
-                self.db.collection("Schedules").document(id).delete()
-            }
+    func addSchedule(locationId: String, truckId: String, openDate: Date, closeDate: Date){
+        do{
+            let scheduleToAdd = Schedule(locationId: locationId, truckId: truckId, openDate: openDate, closeDate: closeDate)
+            let _ = try self.db.collection("Schedules").addDocument(from: scheduleToAdd)
+        } catch {
+            fatalError("Unable to encode task: \(error.localizedDescription)")
         }
     }
 }
