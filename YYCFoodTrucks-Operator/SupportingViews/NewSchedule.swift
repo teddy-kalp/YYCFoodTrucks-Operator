@@ -19,6 +19,7 @@ struct NewSchedule: View {
     @State var address = ""
     @State var truck: Truck
     @State var error = false
+    @State var errorMessage = ""
     
     var body: some View {
         HStack(){
@@ -59,7 +60,7 @@ struct NewSchedule: View {
                     Text("Add Schedule")
                 }
                 if (error){
-                    Text("Please fill out all fields correctly")
+                    Text(errorMessage)
                         .foregroundColor(.red)
                 }
             }
@@ -69,7 +70,12 @@ struct NewSchedule: View {
     func addSchedule(){
         if (self.address == ""){
             error = true
+            errorMessage = "Please enter an address"
             print("Address is wrong")
+        }
+        else if (end < start){
+            error = true
+            errorMessage = "Close Date cannot be before Open Date"
         }
         else{
             let fullAddress = self.address
