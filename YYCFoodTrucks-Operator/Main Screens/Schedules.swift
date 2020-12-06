@@ -10,6 +10,7 @@ import SwiftUI
 struct Schedules: View {
     var schedules: [Schedule]
     @ObservedObject var OperatorRepo = OperatorRepository()
+    @ObservedObject var ScheduleRepo = ScheduleRespository()
 //    var trucks: [Truck]
     var locations: [Location]
     
@@ -39,7 +40,7 @@ struct Schedules: View {
                                                     HStack{
                                                         Text(location!.address)
                                                             .foregroundColor(primColor)
-                                                        Button(action: {}){
+                                                        Button(action: {ScheduleRepo.deleteSchedule(schedule: schedule)}){
                                                             Image(systemName: "minus.circle.fill")
                                                                 .foregroundColor(.red)
                                                         }
