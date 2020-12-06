@@ -35,16 +35,22 @@ class ScheduleRespository: ObservableObject{
                 let closeDate = closeTimestamp!.dateValue()
                 let locationId = data["locationId"] as? String ?? ""
                 let truckId = data["truckId"] as? String ?? ""
-                return Schedule(locationId: locationId, truckId: truckId, openDate: openDate, closeDate: closeDate)
+                let schedule = Schedule(locationId: locationId, truckId: truckId, openDate: openDate, closeDate: closeDate)
+                schedule.scheduleId = queryDocumentSnapshot.documentID
+                return schedule
             }
         }
     }
-    func addSchedule(locationId: String, truckId: String, openDate: Date, closeDate: Date){
+    func addSchedule(locationId: String, truckId: String, openDate: Date, closeDate: Date, schedule_id: String){
         do{
             let scheduleToAdd = Schedule(locationId: locationId, truckId: truckId, openDate: openDate, closeDate: closeDate)
-            let _ = try self.db.collection("Schedules").addDocument(from: scheduleToAdd)
+            let _ = try self.db.collection("Schedules").document(schedule_id).setData(from: scheduleToAdd)
         } catch {
             fatalError("Unable to encode task: \(error.localizedDescription)")
         }
+    }
+    
+    func deleteSchedule(schedule: Schedule){
+        self.db.collection("Schedules").document(schedule.scheduleId!).delete()
     }
 }

@@ -12,6 +12,7 @@ class Schedule: Identifiable, Codable {
     var truckId: String
     var openDate: Date
     var closeDate: Date
+    var scheduleId: String?
     
     init(locationId: String, truckId: String, openDate: Date, closeDate: Date){
         self.locationId = locationId
